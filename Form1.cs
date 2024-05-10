@@ -132,7 +132,7 @@ namespace AS2324._3G.Russo.Antonio.PSDBPCTO
                    
 
                     // query per l'estrazione dei dati dal database
-                    query = "SELECT * FROM Squadre WHERE nazionalita <> 'ITA' ORDER BY nome;";
+                    query = "SELECT * FROM Piloti WHERE IdSquadre='Ducati' ORDER BY nome,cognome;";
 
                     //connessione e query
                     SQLiteDataAdapter dai = new SQLiteDataAdapter(query, strConnessione);
@@ -141,6 +141,35 @@ namespace AS2324._3G.Russo.Antonio.PSDBPCTO
                     {
                         // riempie il DataTable
                         dai.Fill(dtDati);
+
+                        // binda la DataGridView
+                        dgvDati.DataSource = dtDati;
+                    }
+                    catch (Exception exe)
+                    {
+                        MessageBox.Show(exe.Message);
+                    }
+                    break;
+                case "Elenco circuiti ordinati per nome":
+                    // https://www.connectionstrings.com/
+
+                    // imposta la connessione
+
+                    // sqlite Data Source=c:\mydb.db;Version=3;
+                    strConnessione = "Data Source=" + @"C:\Users\Utente\Desktop\flow\AS2324.3G.Russo.Antonio.PSDBPCTO\MotoGP.db" + ";Version=3;";
+
+
+
+                    // query per l'estrazione dei dati dal database
+                    query = "SELECT * FROM Circuiti  ORDER BY nome;";
+
+                    //connessione e query
+                    SQLiteDataAdapter dain = new SQLiteDataAdapter(query, strConnessione);
+
+                    try
+                    {
+                        // riempie il DataTable
+                        dain.Fill(dtDati);
 
                         // binda la DataGridView
                         dgvDati.DataSource = dtDati;
