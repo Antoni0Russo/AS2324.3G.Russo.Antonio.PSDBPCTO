@@ -28,12 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            dgvDati = new DataGridView();
+            btnPiloti = new Button();
+            btnGare = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvDati).BeginInit();
+            SuspendLayout();
+            // 
+            // dgvDati
+            // 
+            dgvDati.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDati.Location = new Point(4, 192);
+            dgvDati.Name = "dgvDati";
+            dgvDati.RowHeadersWidth = 51;
+            dgvDati.RowTemplate.Height = 29;
+            dgvDati.Size = new Size(798, 261);
+            dgvDati.TabIndex = 0;
+            // 
+            // btnPiloti
+            // 
+            btnPiloti.Location = new Point(490, 59);
+            btnPiloti.Name = "btnPiloti";
+            btnPiloti.Size = new Size(113, 45);
+            btnPiloti.TabIndex = 1;
+            btnPiloti.Text = "Elenco Piloti";
+            btnPiloti.UseVisualStyleBackColor = true;
+            btnPiloti.Click += btnPiloti_Click;
+            // 
+            // btnGare
+            // 
+            btnGare.Location = new Point(168, 59);
+            btnGare.Name = "btnGare";
+            btnGare.Size = new Size(113, 45);
+            btnGare.TabIndex = 1;
+            btnGare.Text = "Elenco Gare";
+            btnGare.UseVisualStyleBackColor = true;
+            btnGare.Click += btnGare_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnGare);
+            Controls.Add(btnPiloti);
+            Controls.Add(dgvDati);
+            Name = "Form1";
+            Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)dgvDati).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView dgvDati;
+        private Button btnPiloti;
+        private Button btnGare;
     }
 }
